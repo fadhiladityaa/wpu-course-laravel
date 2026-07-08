@@ -27,11 +27,11 @@
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                                 <a href="#" aria-current="page"
                                     class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Home</a>
-                                <a x-text="test" href="#"
+                                <a x-text="test" href="/blog"
                                     class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"></a>
-                                <a href="#"
+                                <a href="/about"
                                     class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
-                                <a x-show="true" href="#"
+                                <a x-show="true" href="/contact"
                                     class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
 
                             </div>
