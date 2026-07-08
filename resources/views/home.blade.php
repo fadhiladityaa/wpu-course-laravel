@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Ini adalah halaman home</h1>
+    <img  style="width:70px; height: 50px" src="img/gambar1.png" alt="gambar1">
     <ul>
         <li><a href="/home">Home</a></li>
         <li><a href="/about">About</a></li>
@@ -15,3 +16,4 @@
     </ul>
 </body>
 </html>
+
