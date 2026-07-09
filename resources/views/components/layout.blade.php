@@ -16,18 +16,11 @@
     <div class="min-h-full">
         <x-navbar />
 
-        <x-header />
+        <x-header :title="$title"></x-header>
 
         <main>
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 <!-- Your content -->
-                <div class="flex">
-                    @for ($i = 1; $i <= 10; $i++)
-                        @if ($i % 2 !== 0)
-                            <div class="p-3 bg-teal-300 me-1 text-slate-800 text-center">{{ $i }}</div>
-                        @endif
-                    @endfor
-                </div>
                 {{ $slot }}
             </div>
         </main>
