@@ -10,7 +10,7 @@
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                                 @php
-                                    $links = ['/', 'blog', 'about', 'contact'];
+                                    $links = ['/', 'posts', 'about', 'contact'];
                                 @endphp
                                 @foreach ($links as $link)
                                     @if ($loop->first)
