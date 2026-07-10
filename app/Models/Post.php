@@ -22,7 +22,7 @@ Class Post
         ];
     }
 
-    public static function find(string $slug)
+    public static function find(string $slug) 
     {
         return Arr::first(static::all(), fn($post) => ($slug) && $post['slug'] == $slug);
     }
