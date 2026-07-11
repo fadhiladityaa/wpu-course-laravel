@@ -16,7 +16,7 @@ Route::get('/posts', function () {
 
 // dd(request());
 Route::get('/post/{id}', function ($id) {
-        $post = Post::findOrFail($id);
+        $post = Post::find($id);
         // dd($post);
         return view('post', [
             'title' => 'Single Post',
