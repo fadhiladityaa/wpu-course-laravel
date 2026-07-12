@@ -15,8 +15,7 @@ Route::get('/posts', function () {
 });
 
 // dd(request());
-Route::get('/post/{post}', function (Post $post) {
-        $post = Post::findOrFail($post);
+Route::get('/post/{post:slug}', function (Post $post) {
         // dd($post);
         return view('post', [
             'title' => 'Single Post',
@@ -31,3 +30,5 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
+
+
