@@ -23,7 +23,7 @@ class PostFactory extends Factory
         return [
             'title' => $title,
             'slug' => Str::of($title)->slug('-'),
-            'author' => User::factory(),
+            'author_id' => User::factory(),
             'body' => fake()->text(300),
         ];
     }
