@@ -31,4 +31,11 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
 
+Route::get('/posts/{post:name}', function (Post $post) {
+    return view('posts', [
+        'title' => 'Article By. ' . $post->author->name,
+        'post' => $post,
+    ]);
+});
+
 

@@ -4,8 +4,10 @@
             <a href="/post/{{ $post['slug'] }}">
                 <h2 class="text-2xl hover:underline tracking-tight font-bold text-gray-800">{{ $post['title'] }}</h2>
             </a>
-            <span class="text-sm text-gray-600">{{ $post['author'] }}</span>
-            <p class="text-base text-gray-900 my-4 mt-3">{{ Str::limit($post['body'], 200) }}</p>
+            <a href="/posts/{{ $post->author->name }}">
+                <span class="text-sm hover:underline cursor-pointer text-gray-600">{{ $post->author->name }}</span>
+            </a>
+            <p class="text-base text-gray-900 my-4 mt-3">{{ Str::limit($post['body'], 150) }}</p>
             <a href="/post/{{ $post['slug'] }}" class="hover:underline text-blue-400">Read More &raquo;</a>
         </article>
     @endforeach
