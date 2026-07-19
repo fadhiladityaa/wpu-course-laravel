@@ -33,9 +33,9 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
 
-Route::get('/posts/{user:name}', function (User $user) {
+Route::get('/posts/{user:username}', function (User $user) {
     return view('posts', [
-        'title' => 'Article By. ' . $user->name,
+        'title' => count($user->posts) . ' Article By. ' . $user->name,
         'posts' => $user->posts,
     ]);
 });

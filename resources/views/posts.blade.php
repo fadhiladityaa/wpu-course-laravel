@@ -6,7 +6,7 @@
                 <h2 class="text-2xl hover:underline tracking-tight font-bold text-gray-800">{{ $post['title'] }}</h2>
             </a>
             <div class="flex gap-3">
-                <a href="/posts/{{ $post->author->name }}">
+                <a href="/posts/{{ $post->author->username }}">
                     <span class="text-sm hover:underline cursor-pointer text-gray-600">{{ $post->author->name }}
                     </span>
                 </a>
