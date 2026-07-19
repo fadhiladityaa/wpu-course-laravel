@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends Factory<Category>
@@ -17,23 +18,10 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
+        $slug_of_name = fake()->sentence(rand(3, 5));
         return [
-            [
-                'category' => 'Web Programming',
-                'slug' => 'web-programming' 
-            ],
-            [
-                'category' => 'Agentic AI',
-                'slug' => 'agentic-ai' 
-            ],
-            [
-                'category' => 'Cyber Security',
-                'slug' => 'cyber-security' 
-            ],
-            [
-                'category' => 'Internet of Things',
-                'slug' => 'internet-of-things' 
-            ],
+            'name' => $slug_of_name,
+            'slug' => Str::of($slug_of_name)->slug('-'),
         ];
     }
 }

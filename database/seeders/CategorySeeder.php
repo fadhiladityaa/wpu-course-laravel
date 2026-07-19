@@ -16,15 +16,19 @@ class CategorySeeder extends Seeder
         Category::insert([
             [
                 'name' => 'Web Programming',
+                'slug' => 'web-programming' 
             ],
             [
                 'name' => 'Agentic AI',
+                'slug' => 'agentic-ai' 
             ],
             [
                 'name' => 'Cyber Security',
+                'slug' => 'cyber-security' 
             ],
             [
                 'name' => 'Internet of Things',
+                'slug' => 'internet-of-things' 
             ],
         ]);
     }
