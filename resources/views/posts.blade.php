@@ -11,9 +11,9 @@
                     </span>
                 </a>
                 <span>|</span>
-                <a href="/posts/categories/{{ $post->category->categories }}">
+                <a href="/posts/categories/{{ $post->category->name }}">
                     <span class="text-sm hover:underline cursor-pointer text-gray-600">
-                        {{ $post->category->categories }}</span>
+                        {{ $post->category->name }}</span>
                 </a>
             </div>
             <p class="text-base text-gray-900 my-4 mt-3">{{ Str::limit($post['body'], 150) }}</p>

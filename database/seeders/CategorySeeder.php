@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -15,20 +15,16 @@ class CategorySeeder extends Seeder
     {
         Category::insert([
             [
-                'categories' => 'Web Programming',
-                'slug' => 'web-programming' 
+                'name' => 'Web Programming',
             ],
             [
-                'categories' => 'Agentic AI',
-                'slug' => 'agentic-ai' 
+                'name' => 'Agentic AI',
             ],
             [
-                'categories' => 'Cyber Security',
-                'slug' => 'cyber-security' 
+                'name' => 'Cyber Security',
             ],
             [
-                'category' => 'Internet of Things',
-                'slug' => 'internet-of-things' 
+                'name' => 'Internet of Things',
             ],
         ]);
     }

@@ -40,9 +40,9 @@ Route::get('/posts/{user:name}', function (User $user) {
     ]);
 });
 
-Route::get('/posts/categories/{category:categories}', function(Category $category) {
+Route::get('/posts/categories/{category:name}', function(Category $category) {
     return view('posts', [
-        'title' => 'Post Category : ' . $category->categories,
+        'title' => 'Post Category : ' . $category->name,
         'posts' => $category->posts,
     ]);
 });
