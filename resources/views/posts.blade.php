@@ -11,7 +11,7 @@
                     </span>
                 </a>
                 <span>|</span>
-                <a href="/posts/categories/{{ $post->category->name }}">
+                <a href="/posts/categories/{{ $post->category->slug }}">
                     <span class="text-sm hover:underline cursor-pointer text-gray-600">
                         {{ $post->category->name }}</span>
                 </a>
