@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -32,11 +33,16 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
 
-Route::get('/posts/{user:id}', function (User $user) {
+Route::get('/posts/{user:name}', function (User $user) {
     return view('posts', [
         'title' => 'Article By. ' . $user->name,
         'posts' => $user->posts,
     ]);
 });
 
-
+Route::get('/posts/categories/{category:categories}', function(Category $category) {
+    return view('posts', [
+        'title' => 'Post Category : ' . $category->categories,
+        'posts' => $category->posts,
+    ]);
+});
