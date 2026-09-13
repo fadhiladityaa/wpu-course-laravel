@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
@@ -16,19 +16,23 @@ class CategorySeeder extends Seeder
         Category::insert([
             [
                 'name' => 'Web Programming',
-                'slug' => 'web-programming' 
+                'slug' => 'web-programming'
+
             ],
             [
-                'name' => 'Agentic AI',
-                'slug' => 'agentic-ai' 
+                'name' => 'Artificial Intelligence',
+                'slug' => 'artificial-intelligence'
+
             ],
             [
-                'name' => 'Cyber Security',
-                'slug' => 'cyber-security' 
+                'name' => 'Robotics',
+                'slug' => 'robotics'
+
             ],
             [
-                'name' => 'Internet of Things',
-                'slug' => 'internet-of-things' 
+                'name' => 'Machine Learning',
+                'slug' => 'machine-learning'
+
             ],
         ]);
     }
