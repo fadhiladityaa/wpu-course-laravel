@@ -13,7 +13,7 @@ Route::get('/posts', function () {
     return view('posts', [
         'title' => 'Blog',
         'posts' => Post::all(),
-        ]);
+    ]);
 });
 
 // dd(request());

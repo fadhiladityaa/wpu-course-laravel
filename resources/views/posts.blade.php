@@ -2,7 +2,7 @@
     {{-- @dd($posts) --}}
     @foreach ($posts as $post)
         <article class="py-8 max-w-3xl mb-8 border-b border-gray-300  px-1">
-            <a href="/post/{{ $post['slug'] }}">
+            <a href="/post/{{ $post->slug }}">
                 <h2 class="text-2xl hover:underline tracking-tight font-bold text-gray-800">{{ $post['title'] }}</h2>
             </a>
             <div class="flex gap-3">
