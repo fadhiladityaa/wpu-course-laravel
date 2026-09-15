@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 Class Post extends Model {
     use HasFactory;
+
+    protected $with = ['author', 'category'];
     
     protected $guarded = ['id'];
 
