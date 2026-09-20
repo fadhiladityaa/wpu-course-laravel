@@ -16,23 +16,25 @@ class CategorySeeder extends Seeder
         Category::insert([
             [
                 'name' => 'Web Programming',
-                'slug' => 'web-programming'
+                'slug' => 'web-programming',
+                'color' => 'bg-sky-300'
 
             ],
             [
                 'name' => 'Artificial Intelligence',
-                'slug' => 'artificial-intelligence'
+                'slug' => 'artificial-intelligence',
+                'color' => 'bg-cyan-200'
 
             ],
             [
                 'name' => 'Robotics',
-                'slug' => 'robotics'
-
+                'slug' => 'robotics',
+                'color' => 'bg-violet-300'
             ],
             [
                 'name' => 'Machine Learning',
-                'slug' => 'machine-learning'
-
+                'slug' => 'machine-learning',
+                'color' => 'bg-rose-200'
             ],
         ]);
     }
