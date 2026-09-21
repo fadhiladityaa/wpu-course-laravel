@@ -1,5 +1,5 @@
 <x-layout :title="$title">
-    {{-- @dd($posts)  --}}
+    {{-- @dd() --}}
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-4 lg:px-6">
 
         {{-- search form --}}

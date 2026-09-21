@@ -3,7 +3,7 @@
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
-use GuzzleHttp\Psr7\Request;
+// use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,15 +12,10 @@ Route::get('/', function () {
 
 Route::get('/posts', function () {
 
-    $posts = Post::latest();
-
-    if(request('keyword')) {
-        $posts->where('title', 'like', '%' . request('keyword') . '%');
-    }
-
+    $posts = Post::latest()->titleSearch(request(['keyword']))->get();
     return view('posts', [
         'title' => 'Blog',
-        'posts' => $posts->get(),
+        'posts' => $posts,
     ]);
 });
 
