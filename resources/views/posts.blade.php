@@ -4,6 +4,14 @@
 
         {{-- search form --}}
         <form class="max-w-md mx-auto mb-12" method="get">
+            @if (request('category'))
+                <input type="hidden" name="category" value="{{ request('category') }}">
+            @endif
+
+            @if (request('author'))
+                <input type="hidden" name="author" value="{{ request('author') }}">
+            @endif
+
             <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
             <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -37,7 +45,7 @@
                                     d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
                                 </path>
                             </svg>
-                            <a href="/posts/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                            <a href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                         </span>
                         <span class="text-sm">{{ $post->created_at->diffForHumans() }}</span>
                     </div>
@@ -51,7 +59,7 @@
                                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                                 alt="{{ $post->author->name }}" />
                             <span class="font-medium dark:text-white text-xs">
-                                <a href="/posts/{{ $post->author->username }}">{{ $post->author->name }}</a>
+                                <a href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a>
                             </span>
                         </div>
                         <a href="post/{{ $post->slug }}"

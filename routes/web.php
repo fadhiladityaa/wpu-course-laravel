@@ -12,21 +12,13 @@ Route::get('/', function () {
 
 Route::get('/posts', function () {
 
-    $posts = Post::latest()->titleSearch(request(['keyword']))->get();
+    $posts = Post::latest()->titleSearch(request(['keyword', 'category', 'author']))->get();
     return view('posts', [
         'title' => 'Blog',
         'posts' => $posts,
     ]);
 });
 
-// dd(request());
-Route::get('/post/{post:slug}', function (Post $post) {
-        // dd($post);
-        return view('post', [
-            'title' => 'Single Post',
-            'post' => $post
-        ]);
-});
 
 Route::get('/about', function () {
     return view('about', ['title' => 'About']);
@@ -34,18 +26,4 @@ Route::get('/about', function () {
 
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
-});
-
-Route::get('/posts/{user:username}', function (User $user) {
-    return view('posts', [
-        'title' => count($user->posts) . ' Article By. ' . $user->name,
-        'posts' => $user->posts,
-    ]);
-});
-
-Route::get('/posts/categories/{category:slug}', function(Category $category) {
-    return view('posts', [
-        'title' => 'Post Category : ' . $category->name,
-        'posts' => $category->posts,
-    ]);
 });

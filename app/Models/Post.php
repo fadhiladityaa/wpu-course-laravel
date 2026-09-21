@@ -30,5 +30,13 @@ Class Post extends Model {
         $query->when($keyword['keyword'] ?? false, function($query, $keyword) {
             return $query->where('title', 'like', '%' . $keyword . '%');
         });
+
+        $query->when($keyword['category'] ?? false, function($query, $category) {
+            $query->whereHas('category', fn($q) => $q->where('slug', $category));
+        });
+
+        $query->when($keyword['author'] ?? false, function($query, $author) {
+            $query->whereHas('author', fn($q) => $q->where('username', $author));
+        });
     }
 };
