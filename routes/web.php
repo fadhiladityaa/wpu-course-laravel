@@ -12,10 +12,18 @@ Route::get('/', function () {
 
 Route::get('/posts', function () {
 
-    $posts = Post::latest()->titleSearch(request(['keyword', 'category', 'author']))->get();
+    $posts = Post::latest()->titleSearch(request(['keyword', 'category', 'author']))->paginate(8)->withQueryString();
     return view('posts', [
         'title' => 'Blog',
         'posts' => $posts,
+    ]);
+});
+
+Route::get('/post/{post:slug}', function(Post $post) 
+{
+    return view('post', [
+        'title' => 'Single Post',
+        'post' => $post,
     ]);
 });
 

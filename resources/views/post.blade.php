@@ -10,7 +10,7 @@
                             <img class="mr-4 w-16 h-16 rounded-full"
                                 src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos">
                             <div>
-                                <a href="/posts/{{ $post->author->username }}" rel="author"
+                                <a href="/posts?author={{ $post->author->username }}" rel="author"
                                     class="text-xl font-bold text-gray-900 dark:text-white">{{ $post->author->name }}</a>
                                 <span
                                     class="{{ $post->category->color }} flex text-primary-800 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
@@ -21,7 +21,7 @@
                                         </path>
                                     </svg>
                                     <a
-                                        href="/posts/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                                        href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                                 </span>
                                 <p class="text-base text-gray-500 dark:text-gray-400">
                                     {{ $post->created_at->diffForhumans() }}</p>

@@ -1,5 +1,5 @@
 <x-layout :title="$title">
-    {{-- @dd() --}}
+    {{-- @dd($posts)  --}}
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-4 lg:px-6">
 
         {{-- search form --}}
@@ -11,7 +11,6 @@
             @if (request('author'))
                 <input type="hidden" name="author" value="{{ request('author') }}">
             @endif
-
             <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
             <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -31,9 +30,10 @@
         {{-- end search form --}}
 
 
+        {{ $posts->links() }}
         {{-- blogs section --}}
-        <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
-            @foreach ($posts as $post)
+        <div class="grid gap-8 mt-5 lg:grid-cols-3 md:grid-cols-2">
+            @forelse ($posts as $post)
                 <article
                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex justify-between items-center mb-5 text-gray-500">
@@ -74,8 +74,13 @@
                         </a>
                     </div>
                 </article>
-            @endforeach
+            @empty
         </div>
+        <div class="w-full flex flex-col items-center gap-5">
+            <p class="text-md italic text-slate-400">Judul yang anda cari tidak ditemukan...</p>
+            <a class="hover:underline hover:text-blue-500 text-blue-300" href="/posts">&laquo; kembali</a>
+        </div>
+        @endforelse
         {{-- end blogs sec --}}
     </div>
 
