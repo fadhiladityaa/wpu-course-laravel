@@ -78,7 +78,7 @@
         </div>
         <div class="w-full flex flex-col items-center gap-5">
             <p class="text-md italic text-slate-400">Judul yang anda cari tidak ditemukan...</p>
-            <a class="hover:underline hover:text-blue-500 text-blue-300" href="/posts">&laquo; kembali aja</a>
+            <a class="hover:underline hover:text-blue-500 text-blue-300 italic" href="/posts">&laquo; kembali</a>
         </div>
         @endforelse
         {{-- end blogs sec --}}
